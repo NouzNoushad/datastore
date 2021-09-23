@@ -1,0 +1,58 @@
+<div class="row mt-5 mb-5">
+    <%- include('./partials/errors.ejs') %> 
+    <div class="col-md-6 m-auto">
+        <div class="card card-body ">
+            <form action="/register" method="POST" enctype="multipart/form-data">
+            <% errors.map(error => { %>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <%= error.message %> 
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% }); %>  
+            <div class="row justify-content-center mt-4">
+                <div class="col-sm-9 col-form-label">
+                    <small>please upload your image*</small>
+                    <input type="file" name="myImage" id="myImage" class="form-control">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-9 col-form-label">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-9 col-form-label">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-9 col-form-label">
+                    <input type="number" name="phone" id="phone" class="form-control" placeholder="Phone">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-9 col-form-label">
+                    <input type="profession" name="profession" id="profession" class="form-control" placeholder="Profession">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-9 col-form-label">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-9 col-form-label">
+                    <input type="password" name="cpassword" id="cpassword" class="form-control" placeholder="Confirm Password">
+                </div>
+            </div>
+
+            <div class="row justify-content-center mb-4">
+                <div class="col-sm-9 col-form-label">
+                    <button type="submit" class="btn btn-primary col-md-12">Sign Up</button>
+                    <p class="lead mt-2">Have a datastore? <a href="/login">Log In</a></p>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
